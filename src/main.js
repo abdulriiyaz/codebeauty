@@ -36,39 +36,15 @@ soundManager.onready(function() {
       audio2.play();
     }
   });
-
 });
 
 var img = new Image();
-img.src = '../assets/bg.gif';
-
-var embedButton = document.getElementById('embed-button');
-var embedShade = document.getElementById('embed');
-var embedText = document.getElementById('embed-text');
-
-embedButton.addEventListener('click', function(e) {
-  e.preventDefault();
-  embedShade.style.display = 'block';
-  return false;
-}, false);
-
-embedShade.addEventListener('click', function() {
-  embedShade.style.display = 'none';
-}, false);
-
-embedText.addEventListener('click', function(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  this.select();
-  return false;
-})
+img.src = '../assets/bg_2.gif';
 
 var restDrag = 0.8;
 var physics = new ParticleSystem(+0.34, -3, 0, restDrag);
 
 var params = {
-  // mouseXWidth: 0.5,
-  // mouseYMin: 0.84,
   mouseTargetEasing: 0.66,
   mouseTargetEasingUp: 0.66,
   needsDrag: false,
@@ -76,77 +52,42 @@ var params = {
   strokeColor: '#000'// 0.1
 };
 
-
 var paths = [];
 var particles = [];
 var supports = [];
 var supports2 = [];
 var springs = [];
-
 var mouseDown = false;
-
 var firstPlay = true;
 var frameCount = 0;
-
 var numPoints = 8;
 var mouthPadding = 2;
-
 var idleTimeout;
 var idleTimeoutLength = 15000;
-
 var bend = -0.015;
 var smooth = true;
-
 var maxForce = 30;
-
 var segmentLength = getSegmentLength();
 var mouthPoints = numPoints-mouthPadding*2;
-
 var thickness = 110;
 var strokeWeight = 30;
-
 var prevEyeRotation = 0;
 var hue = 0;
-
 var padding = (thickness+strokeWeight)/2; 
 var peaking = false;
 var prevPeaking = false;
-
 var lastPoint;
-
 var stress = 0;
-
 var mousePos = new Point(view.size.width/2, view.size.height-segmentLength);
 var targetMousePos = new Point(view.size.width/2, view.size.height-segmentLength);
 var pathShadow = new Path();
-
 var pathBody = new Path();
 pathBody.style = {
   strokeColor: params.fillColor,
   strokeWidth: thickness + strokeWeight,
   strokeCap: 'round'
 };
-// pathBody.fullySelected = true;
 paths.push(pathBody);
-
-// buildGUI();
-
-// var pathBodyStroke = new Path();
-// pathBodyStroke.style = {
-//   strokeColor: params.strokeColor,
-//   strokeWidth: thickness,
-//   strokeCap: 'round'
-// };
-// pathBodyStroke.opacity = 0;
-// paths.push(pathBodyStroke);
-
-// pathShadow.style = {
-//   strokeColor: '#000',
-//   strokeWidth: thickness + strokeWeight,
-//   strokeCap: 'round'
-// };
-// pathShadow.opacity = 0.2;
-// paths.push(pathShadow);
 
 var pathMouth = new Path();
 pathMouth.style = {

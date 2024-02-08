@@ -4,9 +4,9 @@ var Jiggler = function(rest, bound) {
   this.__pos = rest || 0;
   this.rest = rest || 0;
   this.vel = 0;
-  this.k = 1;
+  this.k = 1.4;
   this.mass = 3;
-  this.d = 0.7;
+  this.d = 0.9;
 };
 
 Object.defineProperty(Jiggler.prototype, 'pos', {
@@ -27,7 +27,7 @@ Jiggler.prototype.update = function() {
 
   var force = -(this.pos - this.rest)*this.k;
   var acc = force / this.mass;
-  this.vel += acc;
+  this.vel -= acc;
   this.vel *= this.d;
   this.pos += this.vel;
 

@@ -1,8 +1,10 @@
 body.bg-a { 
   background: url(../assets/bg.gif);
+  object-fit: cover;
+  background-size: cover;
 }
 body.bg-b { 
-  background: #fff;
+  background: #A9A9A9;
 }
 html { 
   height: 100%;
@@ -12,16 +14,8 @@ body {
   padding: 0;
   overflow: hidden;
   height: 100%;
-
-  background-color: rgb(255,229,237);
-  background-image: -o-linear-gradient(bottom, rgb(255,229,237) 0%, rgb(224,255,233) 100%);
-  background-image: -moz-linear-gradient(bottom, rgb(255,229,237) 0%, rgb(224,255,233) 100%);
-  background-image: -webkit-linear-gradient(bottom, rgb(255,229,237) 0%, rgb(224,255,233) 100%);
-  background-image: -ms-linear-gradient(bottom, rgb(255,229,237) 0%, rgb(224,255,233) 100%);
-  background-image: linear-gradient(bottom, rgb(255,229,237) 0%, rgb(224,255,233) 100%);
-
+  background-color: #A9A9A9;
 }
-
 
 #compat { 
   display: none;
@@ -65,7 +59,7 @@ body {
   font: bold italic 110px serif;
   text-shadow: 0 3px 0 rgba(0,0,0,0.15);
   padding: 20px 40px;
-  color: #fff;
+  color: #070707;
   z-index: 2;
   pointer-events: none;
   -webkit-animation-direction: normal;
@@ -103,12 +97,7 @@ body {
   vertical-align: middle;
   margin-top: 2px;
 }
-#warning .chinese {
-  font-size: 14px;
-  vertical-align: middle;
-  display: inline-block;
-  /*margin-left: 10px;*/
-}
+
 #enquiries { 
   position: absolute;
   top: 15px;
