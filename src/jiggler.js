@@ -1,3 +1,6 @@
+//Jiggler is responsible for the physics of the springy effect of the nodes
+//It is a simple spring-damper system
+
 var Jiggler = function(rest, bound) {
   Jiggler.__all.push(this);
   this.__bound = bound || function() {};
